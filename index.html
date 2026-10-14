@@ -31335,4 +31335,4 @@ document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='answe
 document.addEventListener('submit',e=>{if(e.target.id!=='customTaskForm')return;e.preventDefault();let f=new FormData(e.target),s=f.get('subject'),topic=String(f.get('topic')).trim(),n=Number(f.get('number'));if(n<1||n>(s==='russian'?27:20)){alert('Некорректный номер для предмета.');return}const raw=String(f.get('steps')||'').split('\n').map(x=>x.trim()).filter(Boolean);const t=unify({id:'my-'+Date.now(),subject:s,topic,kind:topic,number:n,question:String(f.get('question')).trim(),answer:String(f.get('answer')).trim(),level:String(f.get('level')),steps:raw.length?raw:['Разбор не добавлен.'],source:'Моя задача · вручную',custom:true});SET.custom.unshift(t);bank.unshift(t);persist();S.subject=s==='russian'?'rus':s==='geometry'?'geo':'math';S.query='';go('custom')});
 render();
 
-</script></body></html>
+</script><script src="mix.js"></script></body></html>
